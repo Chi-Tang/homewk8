@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=big5" >
+        <title></title>
+     
+    </head>
+  <script  language="VB" runat="server">
+     Function TKFOR(DTK3, HDG4)
+        Dim ASTK() = {"癸","甲","乙","丙","丁","戊","己","庚","辛","壬","癸"}
+        Dim ASDG() = {"亥","子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"}
+     ' '  Dim AVTK() = {"甲","癸","壬","辛","庚","己","戊","丁","丙","乙","甲"}
+     ' '   Dim AVDG() = {"子","亥","戌","酉","申","未","午","巳","辰","卯","寅","丑","子"}
+     ' ' Dim i, j, k, m, n, xo, yo, ko, ko1, ko2 As Integer
+       ' ' Dim LK(12), LLUK(12), LR(60), LYER(60)
+     ' ' Dim NAMT0(12),ZNAMT1(12),ZNAMT2(12),ZNAMT3(12),ZNAMT4(12) NAMT5(12),ZNAMT6(12),ZNAMT7(12),ZNAMT8(12),ZNAMT9(12),ZNAMT10(10)
+
+Dim ZNAMTT(10,12)
+Dim SKCOL()= {"0","甲","乙","丙","丁","戊","己","庚","辛","壬","癸"}
+Dim SKROW()= {"0","子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"}
+  ' 'Dim  ZNAMT0()= {"0","壬","癸","甲","乙","丙","丁","戊","己","庚","辛","壬","癸"}
+Dim  ZNAMT1()= {"0","甲","乙","丙","丁","戊","己","庚","辛","壬","癸","甲","乙"}
+Dim  ZNAMT2()= {"0","丙","丁","戊","己","庚","辛","壬","癸","甲","乙","丙","丁"}
+Dim  ZNAMT3()= {"0","戊","己","庚","辛","壬","癸","甲","乙","丙","丁","戊","己"}
+Dim  ZNAMT4()= {"0","庚","辛","壬","癸","甲","乙","丙","丁","戊","己","庚","辛"}
+Dim  ZNAMT5()= {"0","壬","癸","甲","乙","丙","丁","戊","己","庚","辛","壬","癸"}
+Dim  ZNAMT6()= {"0","甲","乙","丙","丁","戊","己","庚","辛","壬","癸","甲","乙"}
+Dim  ZNAMT7()= {"0","丙","丁","戊","己","庚","辛","壬","癸","甲","乙","丙","丁"}
+Dim  ZNAMT8()= {"0","戊","己","庚","辛","壬","癸","甲","乙","丙","丁","戊","己"}
+Dim  ZNAMT9()= {"0","庚","辛","壬","癸","甲","乙","丙","丁","戊","己","庚","辛"}
+Dim  ZNAMT10()= {"0","壬","癸","甲","乙","丙","丁","戊","己","庚","辛","壬","癸"}
+ ' '//Dim ZNAMTT(10,12)   // x[5][12] = 3.0;
+ ' '     var ZNAMTT = new Array(8);
+  Dim i, j, k, m, n As Integer
+  For i = 0 To 12
+       ZNAMTT(1,i) = ZNAMT1(i) 
+       ZNAMTT(2,i) = ZNAMT2(i) 
+       ZNAMTT(3,i) = ZNAMT3(i) 
+       ZNAMTT(4,i) = ZNAMT4(i) 
+       ZNAMTT(5,i) = ZNAMT5(i) 
+       ZNAMTT(6,i) = ZNAMT6(i)
+       ZNAMTT(7,i) = ZNAMT7(i) 
+       ZNAMTT(8,i) = ZNAMT8(i) 
+       ZNAMTT(9,i) = ZNAMT9(i) 
+       ZNAMTT(10,i) = ZNAMT10(i) 
+          
+       Next
+        
+        For j = 0 To 10
+        If SKCOL(j) = DTK3 Then
+        m = j
+         Exit For
+          End If
+        Next
+
+        For k= 0 To 12
+        If SKROW(k) = HDG4 Then
+        n = k
+         Exit For
+          End If
+        Next
+     ' '' ' // return (ZNAMTT[m][n]);
+      ' '   // return (m+n);
+     ' '// } // End Function 
+       Return (ZNAMTT(m,n))
+        
+End Function
+
+Function TDSTR(FTK3,FDG4)
+        Dim ASTK() = {"癸","甲","乙","丙","丁","戊","己","庚","辛","壬","癸"}
+        Dim ASDG() = {"亥","子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"}
+     ' '  Dim AVTK() = {"甲","癸","壬","辛","庚","己","戊","丁","丙","乙","甲"}
+     ' '   Dim AVDG() = {"子","亥","戌","酉","申","未","午","巳","辰","卯","寅","丑","子"}
+     ' ' Dim i, j, k, m, n, xo, yo, ko, ko1, ko2 As Integer
+       ' ' Dim LK(12), LLUK(12), LR(60), LYER(60)
+     ' ' Dim NAMT0(12),ZNAMT1(12),ZNAMT2(12),ZNAMT3(12),ZNAMT4(12) NAMT5(12),ZNAMT6(12),ZNAMT7(12),ZNAMT8(12),ZNAMT9(12),ZNAMT10(10)
+
+Dim ZNAMTT(10,12)
+Dim SKCOL()= {"0","+木","-木","+火","-火","+土","-土","+金","-金","+水","	-水"}
+Dim SKROW()= {"0","+木","-木","+火","-火","+土","-土","+金","-金","+水","	-水"}
+  ' 'Dim  ZNAMT10()= {"0","傷官","食神","正財","偏財","正官","偏官","正印","偏印","劫財","比肩"}
+Dim  ZNAMT1()= {"0","比肩","劫財","食神","傷官","	偏財","正財","偏官","正官","偏印","正印"}
+Dim  ZNAMT2()= {"0","劫財","比肩","傷官","食神","正財","偏財","正官","偏官","正印","偏印"}
+Dim  ZNAMT3()= {"0","偏印","正印","比肩","劫財","食神","傷官","偏財","正財","偏官","正官"}
+Dim  ZNAMT4()= {"0","正印","偏印","劫財","比肩","傷官","食神","正財","偏財","正官","偏官"}
+Dim  ZNAMT5()= {"0","偏官","正官","偏印","正印","比肩","劫財","食神","傷官","偏財","正財"}
+Dim  ZNAMT6()= {"0","正官","偏官","正印","偏印","劫財","比肩","傷官","食神","正財","偏財"}
+Dim  ZNAMT7()= {"0","偏財","正財","偏官","正官","偏印","正印","比肩","劫財","食神","傷官"}
+Dim  ZNAMT8()= {"0","正財","偏財","正官","偏官","正印","偏印","劫財","比肩","傷官","食神"}
+Dim  ZNAMT9()= {"0","食神","傷官","偏財","正財","偏官","正官","偏印","正印","比肩","劫財"}
+Dim  ZNAMT10()= {"0","傷官","食神","正財","偏財","正官","偏官","正印","偏印","劫財","比肩"}
+
+
+ ' '//Dim ZNAMTT(10,12)   // x[5][12] = 3.0;
+ ' '     var ZNAMTT = new Array(8);
+  Dim i, j, k, m, n As Integer
+  For i = 0 To 10
+       ZNAMTT(1,i) = ZNAMT1(i) 
+       ZNAMTT(2,i) = ZNAMT2(i) 
+       ZNAMTT(3,i) = ZNAMT3(i) 
+       ZNAMTT(4,i) = ZNAMT4(i) 
+       ZNAMTT(5,i) = ZNAMT5(i) 
+       ZNAMTT(6,i) = ZNAMT6(i)
+       ZNAMTT(7,i) = ZNAMT7(i) 
+       ZNAMTT(8,i) = ZNAMT8(i) 
+       ZNAMTT(9,i) = ZNAMT9(i) 
+       ZNAMTT(10,i) = ZNAMT10(i) 
+          
+       Next
+        
+        For j = 0 To 10        
+
+        If Trim(SKCOL(j)) = Trim(FTK3) Then
+        m = j
+         Exit For
+          End If
+        Next
+
+        For k= 0 To 10
+        If Trim(SKROW(k)) = Trim(FDG4) Then
+        n = k
+         Exit For
+          End If
+        Next
+     ' '' ' // return (ZNAMTT[m][n]);
+      ' '   // return (m+n);
+     ' '// } // End Function 
+       Return (ZNAMTT(m,n))
+        
+End Function
+           
+  Function TDFIV(DGTK)
+        Dim ASTK() = {"癸","甲","乙","丙","丁","戊","己","庚","辛","壬","癸"}
+        Dim ASDG() = {"亥","子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"}
+        Dim mad11,mad22 As String
+          
+      ' '  Dim AVTK() = {"甲","癸","壬","辛","庚","己","戊","丁","丙","乙","甲"}
+     ' '   Dim AVDG() = {"子","亥","戌","酉","申","未","午","巳","辰","卯","寅","丑","子"}
+     ' ' Dim i, j, k, m, n, xo, yo, ko, ko1, ko2 As Integer
+     ' ' Dim LK(12), LLUK(12), LR(60), LYER(60)
+     ' ' Dim NAMT0(12),ZNAMT1(12),ZNAMT2(12),ZNAMT3(12),ZNAMT4(12) NAMT5(12),ZNAMT6(12),ZNAMT7(12),ZNAMT8(12),ZNAMT9(12),ZNAMT10(10)
+    ' ' Dim ZNAMTT(10,12)
+Dim TKDG()= {"0","甲","乙","丙","丁","戊","己","庚","辛","壬","癸","子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"}
+Dim SXFIV()= {"0","+木","-木","+火","-火","+土","-土","+金","-金","+水","	-水","-水","-土","+木","-木","+土","+火","-火","-土","+金","-金","+土","+水"}
+ ''Dim  ZNAMT0()= {"0","壬","癸","甲","乙","丙","丁","戊","己","庚",
+''//Dim ZNAMTT(10,12)   // x[5][12] = 3.0;
+ ' //    var ZNAMTT = new Array(8);
+  Dim i, j, k, m, n As Integer
+  For j = 0 To 22
+        If Trim(TKDG(j)) = Trim(DGTK) Then
+            mad22= SXFIV(j)
+            Exit For
+        End If
+    Next
+
+    Return mad22
+   End Function
+ 
+       </script>   
+    
+    </body>
+</html>
